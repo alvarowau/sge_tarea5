@@ -1,8 +1,8 @@
 # credential_validator.py
 
 # Importar los módulos de validación de username y password
-import username_validation
-import password_validation
+from username_validation import validate_username
+from password_validation import validate_password
 
 
 def validate_credentials(username, password):
@@ -30,8 +30,8 @@ def validate_credentials(username, password):
               'password_message' contendrá un mensaje (por ahora simple: 'Válida' o 'No válida') sobre la validación de la contraseña.
     """
 
-    resultado_validacion_nombre = username_validation.validate_username(username)
-    es_contrasena_valida = password_validation.validate_password(password)
+    resultado_validacion_nombre = validate_username(username)
+    es_contrasena_valida = validate_password(password)
 
     resultados_credenciales = {
         "username_valid": resultado_validacion_nombre[0] == 0,
@@ -44,7 +44,7 @@ def validate_credentials(username, password):
         ),
     }
     return resultados_credenciales
-
+"""
 
 if __name__ == "__main__":
     # Ejemplos de uso del validador de credenciales (solo si se ejecuta este script directamente)
@@ -92,3 +92,4 @@ if __name__ == "__main__":
         f"  Contraseña válida: {credenciales4['password_valid']}, Mensaje: {credenciales4['password_message']}"
     )
     print("-" * 30)
+"""
