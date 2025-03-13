@@ -5,9 +5,8 @@ def init():
     respuesta = comprobacion_user_pass()
     if respuesta[0]:
         nombre ,password  = list(respuesta[1])
-        print(f"el nombre es {nombre} la contraselña es: {password}")
     else:
-        print("salimos del programa")
+        print("salimos de esta mierda")
 
 
 def request_name():
