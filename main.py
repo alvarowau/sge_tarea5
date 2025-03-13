@@ -1,3 +1,5 @@
-from parte_dos.request_data import request_value_central
+# main.py
+from parte_dos.request_data import init
 
-request_value_central()
+if __name__ == "__main__":
+    init()
