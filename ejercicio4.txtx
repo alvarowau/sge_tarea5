@@ -1,0 +1,114 @@
+---------------------------------------------------------------------------------
+                                    INFORME
+        Módulo de Gestión de Datos de Usuarios en Python
+---------------------------------------------------------------------------------
+Fecha: 14 de marzo de 2025
+
+Se ha desarrollado un módulo en Python para gestionar una tabla de datos de usuarios, permitiendo la captura, validación, búsqueda y almacenamiento de información personal. Este módulo cumple con los requisitos especificados en la Parte II del ejercicio, utilizando diccionarios para almacenar los datos y un archivo CSV para la persistencia de la información.
+
+=================================================================================
+1. ESTRUCTURA DEL MÓDULO
+=================================================================================
+
+El módulo está compuesto por una clase principal llamada UserDataTable, que gestiona todas las operaciones relacionadas con los datos de los usuarios. A continuación, se describen sus componentes principales:
+
+1.1. ATRIBUTOS DE LA CLASE
+---------------------------
+   - password_requirements (str):
+     Contiene los requisitos para la contraseña del usuario, como longitud mínima, uso de mayúsculas, minúsculas, números y caracteres especiales.
+
+   - username_requirements (str):
+     Especifica los requisitos para el nombre de usuario, como longitud mínima y máxima, y restricción a caracteres alfanuméricos.
+
+   - data_table (list):
+     Almacena los datos de los usuarios en forma de diccionarios, donde cada diccionario representa a una persona.
+
+1.2. MÉTODOS DE LA CLASE
+------------------------
+   1.2.1. Captura de Datos
+          -----------------
+          request_person_data:
+          Solicita al usuario que ingrese datos personales (apellidos, nombre, fecha de nacimiento, dirección, nombre de usuario y contraseña). Valida las credenciales utilizando el módulo credential_validator y, si son válidas, añade los datos a la tabla.
+
+   1.2.2. Validación de Credenciales
+          ---------------------------
+          check_data:
+          Valida el nombre de usuario y la contraseña utilizando la función validate_credentials del módulo credential_validator. Retorna un booleano y un mensaje de error en caso de que las credenciales no sean válidas.
+
+   1.2.3. Búsqueda de Datos
+          -----------------
+          find_person:
+          Permite buscar personas en la tabla por nombre, apellido o nombre de usuario. Muestra los resultados coincidentes en un formato legible.
+
+   1.2.4. Persistencia de Datos
+          ----------------------
+          add_to_csv:
+          Guarda los datos de la tabla en un archivo CSV. Si el archivo no existe, lo crea; si existe, lo sobrescribe.
+
+          recover_from_csv:
+          Recupera los datos desde un archivo CSV y los carga en la tabla. Si el archivo no existe, informa al usuario.
+
+   1.2.5. Interfaz de Usuario
+          --------------------
+          show_menu:
+          Muestra un menú interactivo con las opciones disponibles para el usuario.
+
+          execute_menu:
+          Ejecuta el menú interactivo, permitiendo al usuario seleccionar y realizar operaciones como agregar datos, buscar, guardar en CSV o recuperar desde CSV.
+
+=================================================================================
+2. FUNCIONAMIENTO DEL MÓDULO
+=================================================================================
+
+2.1. CAPTURA Y VALIDACIÓN DE DATOS
+----------------------------------
+El módulo solicita al usuario que ingrese datos personales, incluyendo un nombre de usuario y una contraseña. Estos datos son validados utilizando el módulo credential_validator, que asegura que cumplan con los requisitos especificados.
+
+2.2. BÚSQUEDA DE INFORMACIÓN
+----------------------------
+El módulo permite buscar registros en la tabla por nombre, apellido o nombre de usuario. Los resultados se muestran en pantalla de manera clara y organizada.
+
+2.3. ALMACENAMIENTO Y RECUPERACIÓN DE DATOS
+------------------------------------------
+Los datos de la tabla pueden guardarse en un archivo CSV para su persistencia. Además, el módulo permite recuperar datos desde un archivo CSV previamente guardado, lo que facilita la continuidad del trabajo entre sesiones.
+
+2.4. MENÚ INTERACTIVO
+--------------------
+El módulo incluye un menú interactivo que permite al usuario realizar todas las operaciones de manera sencilla. Las opciones incluyen:
+
+   - Solicitar datos de una persona.
+   - Buscar datos en la tabla.
+   - Guardar la tabla en un archivo CSV.
+   - Recuperar datos desde un archivo CSV.
+   - Mostrar la tabla completa (solo para pruebas).
+   - Salir del programa.
+
+=================================================================================
+3. EJEMPLO DE USO
+=================================================================================
+
+Inicialización:
+Al iniciar el programa, se crea una instancia de la clase UserDataTable y se cargan automáticamente los datos desde el archivo CSV (si existe).
+
+Captura de Datos:
+El usuario selecciona la opción "Solicitar datos de persona" e ingresa la información requerida. El módulo valida las credenciales y, si son válidas, añade los datos a la tabla.
+
+Búsqueda de Datos:
+El usuario puede buscar registros por nombre, apellido o nombre de usuario. Los resultados se muestran en pantalla.
+
+Guardado de Datos:
+El usuario puede guardar la tabla actual en un archivo CSV para su persistencia.
+
+Recuperación de Datos:
+El usuario puede cargar datos desde un archivo CSV previamente guardado.
+
+Salida:
+El usuario puede salir del programa en cualquier momento.
+
+=================================================================================
+4. CONCLUSIÓN
+=================================================================================
+
+El módulo UserDataTable proporciona una solución robusta y eficiente para la gestión de datos de usuarios, cumpliendo con los requisitos especificados en el ejercicio. Su diseño modular y su interfaz interactiva lo hacen fácil de usar y extender para futuras necesidades.
+
+Este informe describe de manera clara y estructurada el funcionamiento y la implementación del módulo, siguiendo un formato similar al que proporcionaste.

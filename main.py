@@ -1,5 +1,5 @@
 # main.py
-from parte_dos.request_data import init
+from parte_dos.table_users import main_activity4
 
 if __name__ == "__main__":
-    init()
+    main_activity4()
